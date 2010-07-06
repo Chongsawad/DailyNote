@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="graph">WebGraph</string>
+    <string name="app_name">DailyNote</string>
+    <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="myButton">
+    </style>
+</resources>
