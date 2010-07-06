@@ -12,6 +12,7 @@ public final class R {
     }
     public static final class drawable {
         public static final int icon=0x7f020000;
+        public static final int nature=0x7f020001;
     }
     public static final class id {
         public static final int bNext=0x7f06000b;
@@ -24,6 +25,7 @@ public final class R {
         public static final int dateWrapper=0x7f060006;
         public static final int inputNum=0x7f060003;
         public static final int note=0x7f06000d;
+        public static final int space=0x7f06000e;
         public static final int unitChange=0x7f060004;
         public static final int unitChangeLayout=0x7f060002;
         public static final int webViewLayout=0x7f060001;
