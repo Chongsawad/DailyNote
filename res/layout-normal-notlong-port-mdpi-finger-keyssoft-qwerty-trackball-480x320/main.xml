@@ -62,25 +62,26 @@
 					android:layout_width="fill_parent"
 					android:layout_below="@+id/dateLayout">
 						
-					<Button android:id="@+id/bPrev"
+					<TextView android:id="@+id/bPrev"
 						android:layout_width="65px" 
 						android:layout_alignParentLeft="true"
 						android:text="Previous"
 						style="@style/myButton"
 					android:layout_height="32px"/>
-					<Button android:id="@+id/bToday" 
+					<TextView android:id="@+id/bToday" 
 						android:layout_width="65px" 
 						android:layout_centerInParent="true"
 						android:text="Today"
 						style="@style/myButton"
 					android:layout_height="32px"/>
-					<Button android:id="@+id/bNext" 
+					<TextView android:id="@+id/bNext" 
 						android:layout_width="65px" 
 						android:layout_alignParentRight="true"
 						android:text="Next"
 						style="@style/myButton"
 					android:layout_height="32px"/>
-				</RelativeLayout>	
+				
+</RelativeLayout>	
 			</AbsoluteLayout>
 			<TextView android:id="@+id/dateView"
 				android:layout_width="fill_parent"
@@ -88,14 +89,18 @@
 				android:layout_below="@+id/dateWrapper"
 				android:paddingTop="5px"
 				android:paddingBottom="5px"
-
 				android:gravity="center_horizontal"
-				android:focusable="true" android:fitsSystemWindows="true" android:text="Aug,31 2001" android:textStyle="bold" android:textSize="16sp" android:keepScreenOn="true"/>
+				android:text="Aug,31 2001" 
+				android:textStyle="bold" 
+				android:textSize="18sp"
+				android:textColor="#fff"
+				/>
 			<EditText android:id="@+id/note"
 				android:layout_width="fill_parent"
 				android:layout_height="fill_parent"
 				android:gravity="top"
-				android:layout_below="@+id/dateView"/>
+				android:layout_below="@+id/dateView"
+				/>
 			
 	</RelativeLayout>
 </RelativeLayout>
