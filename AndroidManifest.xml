@@ -12,7 +12,8 @@
             </intent-filter>
         </activity>
 
-    </application>
+    <activity android:name=".NoteEdit"></activity>
+</application>
 
 
 </manifest> 

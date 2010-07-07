@@ -1,98 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/wrapper"
-	android:layout_width="fill_parent" android:layout_height="fill_parent"
-	xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/wrapper" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
 
-	<RelativeLayout android:id="@+id/webViewLayout" 
-		android:layout_centerHorizontal="true"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:paddingLeft="10px"
-		android:paddingRight="10px"
-		android:paddingTop="10px"
-		android:paddingBottom="5px"
-		>
-		<TextView
-			android:text="@string/graph"
-			android:layout_width="fill_parent"
-			android:layout_centerHorizontal="true"
-			android:background="#333" android:layout_height="100px"/>
+	<RelativeLayout android:id="@+id/webViewLayout"
+		android:layout_centerHorizontal="true" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:paddingLeft="10px"
+		android:paddingRight="10px" android:paddingTop="10px"
+		android:paddingBottom="5px">
+		<TextView android:text="@string/graph" android:layout_width="fill_parent"
+			android:layout_centerHorizontal="true" android:background="#333"
+			android:layout_height="100px" />
 	</RelativeLayout>
-	
+
 	<RelativeLayout android:id="@+id/unitChangeLayout"
-		android:padding="10px"
-		android:layout_below="@+id/webViewLayout"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:paddingBottom="0px" android:paddingTop="3px">
-		
-		<AbsoluteLayout android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_toRightOf="@+id/unitChangeLayout">
-			<EditText android:id="@+id/inputNum" 
-				android:layout_width="160px" 
-				android:layout_height="40px" 
-				android:layout_x="140px"
-				android:layout_y="0px"
-				android:inputType="phone"/>
-			<Button android:id="@+id/unitChange"
-				android:layout_width="50px"
-				android:layout_height="36px"
-				android:text="Kg."
-				android:layout_x="250px"
-				android:layout_y="2px"
-				/>
-		</AbsoluteLayout>
-			<TextView android:id="@+id/dateView"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@+id/unitChangeLayout"
-				android:paddingTop="5px"
-				android:paddingBottom="5px"
-				android:text="Aug,31 2001" 
-				android:textStyle="bold" 
-				android:textSize="16sp" />
-	</RelativeLayout>
-		<RelativeLayout android:id="@+id/dateLayout"
-			android:padding="10px"
-			android:layout_below="@+id/unitChangeLayout"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
-			
-			<AbsoluteLayout android:id="@+id/dateWrapper"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content">
-				
-				<RelativeLayout android:id="@+id/dateButtonBar"
-					android:layout_height="wrap_content"
-					android:layout_width="fill_parent"
-					android:layout_below="@+id/dateLayout">
-						
-					<Button android:id="@+id/bPrev"
-						android:layout_width="65px" 
-						android:layout_alignParentLeft="true"
-						android:text="Previous"
-						style="@style/myButton"
-					android:layout_height="32px"/>
-					<Button android:id="@+id/bToday" 
-						android:layout_width="65px" 
-						android:layout_centerInParent="true"
-						android:text="Today"
-						style="@style/myButton"
-					android:layout_height="32px"/>
-					<Button android:id="@+id/bNext" 
-						android:layout_width="65px" 
-						android:layout_alignParentRight="true"
-						android:text="Next"
-						style="@style/myButton"
-					android:layout_height="32px"/>
-				</RelativeLayout>	
-			</AbsoluteLayout>
+		android:padding="10px" android:layout_below="@+id/webViewLayout"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:paddingBottom="0px" android:paddingTop="3px">
 
-			<EditText android:id="@+id/note"
-				android:layout_width="fill_parent"
-				android:layout_height="120px"
-				android:gravity="top"
-				android:layout_below="@+id/dateWrapper"/>
-			
+		<AbsoluteLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_toRightOf="@+id/unitChangeLayout">
+			<EditText android:id="@+id/inputNum" android:layout_width="160px"
+				android:layout_height="40px" android:layout_x="140px"
+				android:layout_y="0px" android:inputType="phone" />
+			<Button android:id="@+id/unitChange" android:layout_width="50px"
+				android:layout_height="36px" android:text="Kg." android:layout_x="250px"
+				android:layout_y="2px" />
+		</AbsoluteLayout>
+		<TextView android:id="@+id/dateView" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_toLeftOf="@+id/unitChangeLayout"
+			android:paddingTop="5px" android:paddingBottom="5px" android:text="Aug,31 2001"
+			android:textStyle="bold" android:textSize="16sp" />
+	</RelativeLayout>
+	<RelativeLayout android:id="@+id/dateLayout"
+		android:padding="10px" android:layout_below="@+id/unitChangeLayout"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+		<AbsoluteLayout android:id="@+id/dateWrapper"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+			<RelativeLayout android:id="@+id/dateButtonBar"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:layout_below="@+id/dateLayout">
+
+				<TextView android:id="@+id/bPrev" android:layout_width="65px"
+					android:layout_alignParentLeft="true" android:text="Previous"
+					style="@style/myButton" android:layout_height="32px" />
+				<TextView android:id="@+id/bToday" android:layout_width="65px"
+					android:layout_centerInParent="true" android:text="Today" style="@style/myButton"
+					android:layout_height="32px" />
+				<TextView android:id="@+id/bNext" android:layout_width="65px"
+					android:layout_alignParentRight="true" android:text="Next"
+					style="@style/myButton" android:layout_height="32px" />
+			</RelativeLayout>
+		</AbsoluteLayout>
+
+		<TextView android:id="@+id/note" android:background="@drawable/paper_yellow"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:gravity="top" android:layout_below="@+id/dateWrapper" />
+
 	</RelativeLayout>
 </RelativeLayout>
