@@ -27,12 +27,6 @@ public class DailyNote extends Activity {
         inputNum = (EditText) findViewById(R.id.inputNum);
         dateView = (TextView) findViewById(R.id.dateView);
         note = (EditText) findViewById(R.id.note);
-        bkg.setOnClickListener(new View.OnClickListener() {
-			
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-			}
-		});
         
         setContentView(R.layout.main);
     }    
