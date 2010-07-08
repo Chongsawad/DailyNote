@@ -22,15 +22,16 @@
 			android:layout_height="wrap_content" android:layout_toRightOf="@+id/unitChangeLayout">
 			<EditText android:id="@+id/inputNum" android:layout_width="160px"
 				android:layout_height="40px" android:layout_x="140px"
-				android:layout_y="0px" android:inputType="phone" />
+				android:layout_y="0px" android:inputType="phone"
+				android:gravity="center_horizontal" />
 			<Button android:id="@+id/unitChange" android:layout_width="50px"
 				android:layout_height="36px" android:text="Kg." android:layout_x="250px"
 				android:layout_y="2px" />
 		</AbsoluteLayout>
-		<TextView android:id="@+id/dateView" android:layout_width="fill_parent"
+		<TextView android:id="@+id/date" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:layout_toLeftOf="@+id/unitChangeLayout"
-			android:paddingTop="5px" android:paddingBottom="5px" android:text="Aug,31 2001"
-			android:textStyle="bold" android:textSize="16sp" />
+			android:paddingTop="5px" android:paddingBottom="5px" android:text=""
+			android:textStyle="bold" android:textSize="18sp" />
 	</RelativeLayout>
 	<RelativeLayout android:id="@+id/dateLayout"
 		android:padding="10px" android:layout_below="@+id/unitChangeLayout"
