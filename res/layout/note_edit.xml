@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/wrapper" xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:padding="10px" >
+	<RelativeLayout android:orientation="horizontal" android:id="@+id/headNote"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<TextView android:layout_width="wrap_content" android:layout_alignParentLeft="true"
+			android:layout_height="wrap_content" android:text="July,1,2015"
+			android:textSize="16sp" android:textStyle="bold"
+			android:textColor="#fff" android:id="@+id/dateString"/>
+		<Button android:id="@+id/done" android:layout_width="wrap_content" android:text="Done"
+			android:layout_height="wrap_content" android:layout_alignParentRight="true"/>
+	</RelativeLayout>
+	<EditText android:id="@+id/title" android:layout_width="fill_parent" android:layout_marginTop="5px"
+		android:padding="10px" android:layout_height="fill_parent" 
+		android:background="@drawable/paper_yellow" android:gravity="top"/>
+</LinearLayout>
