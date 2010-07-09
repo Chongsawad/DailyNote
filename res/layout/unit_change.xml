@@ -3,17 +3,40 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:orientation="vertical" android:padding="10px">
-	
-	<Button android:id="@+id/unitDone" android:layout_width="wrap_content"
-		android:text="Done" android:layout_height="wrap_content"
-		android:layout_gravity="right" />
-		
-	<TextView android:layout_width="wrap_content"
-		android:layout_alignParentLeft="true" android:layout_height="wrap_content"
-		android:textSize="16sp" android:textStyle="bold" android:textColor="#fff"
-		android:text="Change the unit" />
-	
-	<ListView android:id="@+id/unitList" android:layout_height="wrap_content" 
-		android:layout_width="fill_parent" />
-		
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<LinearLayout android:layout_height="fill_parent"
+			android:layout_width="fill_parent" android:orientation="vertical">
+			<TextView android:layout_width="wrap_content"
+				android:layout_alignParentLeft="true" android:layout_height="wrap_content"
+				android:textSize="18sp" android:textStyle="bold" android:textColor="#fff"
+				android:text="Change the unit" android:layout_marginBottom="20px" />
+
+			<LinearLayout android:layout_width="260px"
+				android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+				android:orientation="vertical" android:layout_marginBottom="10px">
+				<TextView android:layout_width="wrap_content"
+					android:layout_alignParentLeft="true" android:layout_height="wrap_content"
+					android:textSize="16sp" android:textColor="#fff" android:text="Mass and Weight" />
+
+				<ListView android:id="@+id/unitList1" android:paddingLeft="10px"
+					android:layout_height="125px" android:layout_width="fill_parent" />
+			</LinearLayout>
+
+			<LinearLayout android:layout_width="260px"
+				android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+				android:orientation="vertical" android:layout_marginBottom="10px">
+				<TextView android:layout_width="wrap_content"
+					android:layout_alignParentLeft="true" android:layout_height="wrap_content"
+					android:textSize="16sp" android:textColor="#fff" android:text="Distance and Length" />
+
+				<ListView android:id="@+id/unitList2" android:paddingLeft="10px"
+					android:layout_height="300px" android:layout_width="fill_parent" />
+			</LinearLayout>
+
+			<Button android:id="@+id/unitDone" android:layout_width="wrap_content"
+				android:text="Done" android:layout_height="wrap_content"
+				android:layout_gravity="right" />
+		</LinearLayout>
+	</ScrollView>
 </LinearLayout>

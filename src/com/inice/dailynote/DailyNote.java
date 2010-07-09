@@ -6,40 +6,50 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 public class DailyNote extends Activity {
 	public StringBuilder s;
-	private TextView dateView,newNote;
-	private TextView bToday, bPrev, bNext;
-	private Button unitButton;
 	private final static int DATE_DIALOG_ID = 0;
+	private static final int ACTIVITY_CREATE = 0;
+	private final static int ACTIVITY_EDIT = 1;
     private int cDay, cMonth, cYear;
     private int vDay, vMonth, vYear;
-	private Calendar c;    
-    
+	private Calendar c = Calendar.getInstance(); 
+	private Button unitButton;
+	private TextView newNote;
+	private TextView bToday, bPrev, bNext;
+	private TextView dateView;
+	private NotesDbAdapter mDbHelper;
+	private Cursor cursor;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
+        initDate();
+        initEvent();     
         
-        c = Calendar.getInstance();
+        mDbHelper = new NotesDbAdapter(this);
+        mDbHelper.open();
+        //getNote();
+        cursor = mDbHelper.fetchAllNotes();
+        startManagingCursor(cursor);
         
-        cDay = c.get(Calendar.DAY_OF_MONTH);
-        cMonth = c.get(Calendar.MONTH);
-        cYear = c.get(Calendar.YEAR);
         
-        dateView = (TextView) findViewById(R.id.date);
+        //SimpleCursorAdapter s = new SimpleCursorAdapter(this, R.id.note, c, from, to);
         
-        updateDate();
-        
-        dateView.setOnClickListener(new View.OnClickListener() {
+    }
+    
+    private void initEvent(){
+dateView.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
 				showDialog(DATE_DIALOG_ID);
@@ -89,6 +99,14 @@ public class DailyNote extends Activity {
 			}
 		});
     }
+    
+    private void initDate(){
+    	dateView =  (TextView) findViewById(R.id.date);
+        cDay = c.get(Calendar.DAY_OF_MONTH);
+        cMonth = c.get(Calendar.MONTH);
+        cYear = c.get(Calendar.YEAR);
+        updateDate();
+    }
     private void unitChange(){
     	Intent u = new Intent(this, unitChange.class);
     	startActivity(u);
@@ -96,8 +114,13 @@ public class DailyNote extends Activity {
     
     private void createNewNote(){
     	Intent i = new Intent(this, NoteEdit.class);
-    	startActivity(i);
+    	i.putExtra(NotesDbAdapter.KEY_ROWID, 0);
+        //i.putExtra(NotesDbAdapter.KEY_BODY, cursor.getString(
+        //		cursor.getColumnIndexOrThrow(NotesDbAdapter.KEY_BODY)));
+        startActivityForResult(i, ACTIVITY_CREATE);
+    	//startActivity(i);
     }
+    
     private void resetDate(){
     	vDay = cDay;
     	vMonth = cMonth;
@@ -124,7 +147,32 @@ public class DailyNote extends Activity {
     	return null;
     }
     
-    private DatePickerDialog.OnDateSetListener mDateList = new DatePickerDialog.OnDateSetListener() {
+    
+    @Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		//Bundle extras = data.getExtras();
+		
+        switch (requestCode) {
+		case ACTIVITY_CREATE:
+			//String body = extras.getString(NotesDbAdapter.KEY_BODY);
+			//mDbHelper.createNote(body);
+
+			break;
+		case ACTIVITY_EDIT:
+			
+//			Long mRowId = extras.getLong(NotesDbAdapter.KEY_ROWID);
+//			if(mRowId != null){
+//				String editBody = extras.getString(NotesDbAdapter.KEY_BODY);
+//				mDbHelper.updateNote(mRowId, editTitle, editBody);
+//			}
+
+			break;
+        }
+	}
+
+
+	private DatePickerDialog.OnDateSetListener mDateList = new DatePickerDialog.OnDateSetListener() {
 
 		public void onDateSet(android.widget.DatePicker view, int year,
 				int monthOfYear, int dayOfMonth) {
@@ -135,4 +183,5 @@ public class DailyNote extends Activity {
 			updateDate();
 		}
 	};
+	
 }
